@@ -26,3 +26,5 @@ This will create 2 Files: <i>postcss.config.js</i> and <i>tailwind.config.js</i>
 <li><i> npm install react-icons --save</i></li>
 ## Achieved Progress 1
 <b> Create plain template for task items </b>
+## Achieved Progress 1
+<b> Enclosed the tasks into a container with independent scroll behavior and custom scroll bar </b>
