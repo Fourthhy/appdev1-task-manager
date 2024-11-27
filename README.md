@@ -3,4 +3,7 @@
 ## Task Manager
 
 Changes log <br>
-<li> 11/27 - 7:49 Uploaded Base Files </li>
+11/27 <b> installed the following packages: </b>
+<li>tailwindcss@latest</li>
+<li>postcss@latest</li>
+<li>autoprefixer@latest</li>
