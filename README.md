@@ -21,3 +21,8 @@ This will create 2 Files: <i>postcss.config.js</i> and <i>tailwind.config.js</i>
 <br><hr>
 <b> Created Theme toggle component (Testing)</b>
 <li> Toggles between light mode and dark mode using tailwind. </li>
+<br><hr>
+<b> Installed react-icons</b>
+<li><i> npm install react-icons --save</i></li>
+## Achieved Progress 1
+<b> Create plain template for task items </b>
