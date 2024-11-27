@@ -43,12 +43,45 @@ use tailwind for easy designing
 switching to dark-mode and light-mode 
 useState()
 
-**PROCESS
+**COMPOSITION**
+Main
+	InputTask
+	Display Task
+	Tasks
+
+**PROCESS** - part 1 = front end
 Find background - Done
-Find Resources 
-Find Logo
+Find Resources - Done 
+Find Logo - Done
+	Preparation of Logo for production use. - Done
+
 Find Color Templates
-Read Tailwind Documentation - search for components ig??
+	For Title design
+		1.
+		#BCECFF
+		#C2BBFF
+		2.
+		#FFD1FF
+		#FBD0C8
+		3.
+		#D2FEFF
+		#F6BEES
+		4.
+		#FBF7B8
+		5.
+		#FCF5EC
+		#8DDFF6
+		6.
+		#98ADDA
+		#FCD2D3	
+		7.
+		#FBF7B8
+		#FAFCD9
+		8.
+		#F7CDE1
+		#97F7F5
+Read Tailwind Documentation - search for components ig?? - DOING
+
 Create individual components
  - For fetched tasks
  - For input of tasks
@@ -56,3 +89,6 @@ Find an animation for the input of tasks - New Tasks
 Find an animation for the input of tasks - Deleted Tasks
 Switching texts buttons animation
 Read about input validation
+
+**PROCESS** - part 2 = back end
+setting the firebase and etc..

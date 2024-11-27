@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import ArchLogo from '/ArchivistLogo.png'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +12,7 @@ function App() {
       <div class="bg-gradient-to-br from-purple-500 to-green-400 h-screen w-screen">
         <div>
           <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
+            <img src={ArchLogo} className="logo" alt="Vite logo" />
           </a>
           <a href="https://react.dev" target="_blank">
             <img src={reactLogo} className="logo react" alt="React logo" />
