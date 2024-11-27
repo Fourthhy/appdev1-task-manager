@@ -24,7 +24,14 @@ This will create 2 Files: <i>postcss.config.js</i> and <i>tailwind.config.js</i>
 <br><hr>
 <b> Installed react-icons</b>
 <li><i> npm install react-icons --save</i></li>
+
 ## Achieved Progress 1
 <b> Create plain template for task items </b>
-## Achieved Progress 1
+
+## Achieved Progress 2
 <b> Enclosed the tasks into a container with independent scroll behavior and custom scroll bar </b>
+
+## Goals for 11/28 production
+<li> Separate the "Completed" and "Pending" Sections of tasks (if possible, create a separate component and use state management to switch betwen components)</li>
+<li> find animations for appearing of new tasks and deletion of old tasks </li>
+<li> finish the templates to proceed to backend </li>
