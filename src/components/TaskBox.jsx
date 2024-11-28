@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { RiDeleteBackLine } from "react-icons/ri";
 //bg-gradient-to-br from-[#FFD1FF] to-[#FBD0C8] - Red / Pending
 //bg-gradient-to-br from-[#97F7F5] to-[#FBF7B8] - Green / Completed
 function TaskBox() {
-    const container = document.getElementById('taskBox')
+    const [status, setStatus] = useState(false);
+    //checks if completed = true, pending = false
+    
+    const handleStatus = () => {
+        if (status == true) {
+            setStatus(false)
+        } else {
+            setStatus(true);
+        }
+    }
     
     return (
         <>
@@ -24,8 +34,8 @@ function TaskBox() {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore, magnam iure quas libero dolorum voluptate maiores modi maxime corrupti.
                         </div>
 
-                        <div class="flex justify-start items-center ml-[15px] pb-[12px]">
-                            <div> Status </div>
+                        <div class="flex justify-start items-center ml-[15px] pb-[12px] cursor-pointer">
+                            <div onClick={handleStatus}> {status ? 'completed' : 'pending'} </div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ArchLogo from '/ArchivistLogo.png'
+import ArchLogo from '/ArchivistLogoEdited-.png'
 import TaskBox from './components/TaskBox'
 import AddTask from './components/AddTask'
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <div class="h-screen w-screen flex justify-center items-center bg-gradient-to-br from-purple-500 to-green-400 h-screen w-screen">
       <div class="bg-[#ffffff5d] rounded-[10px] border-[1px] border-[#ffffff75] ">
         <div class="h-[97vh] w-[97vw] relative overflow-y-auto overflow-x-hidden ">
-          <div>
-            <img src={ArchLogo} class="h-20 w-20 mt-[-13px] ml-[-10px] absolute"/>
+          <div class="border-[1px] border-black flex justify-start items-center mt-[10px]"> {/* NAV BAR */}
+            <img src={ArchLogo} class="w-[40px] h-[40px] border-[1px] border-black ml-[10px]"/>
           </div>
           <div class="grid grid-cols-[21vw,75vw]">
             <div>
