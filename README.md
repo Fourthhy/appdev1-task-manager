@@ -43,3 +43,5 @@ This will create 2 Files: <i>postcss.config.js</i> and <i>tailwind.config.js</i>
 11/29 <br><hr>
 <li> installed firebase in project </li>
 *npm install firebase*
+
+<li> entered db credentials and securely stored </li>
