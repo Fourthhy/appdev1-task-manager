@@ -18,12 +18,14 @@ function AddTask() {
                             
                             <div class="flex justify-end">
                                 <button type="submit" 
-                                class="border-[#808080] rounded-[5px] border-[1px] w-[100px] flex justify-center items-center text-[15px]">Add Task</button>
+                                class="border-[#808080] rounded-[5px] border-[1px] w-[100px] flex justify-center items-center text-[15px]"
+                                >Add Task</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+            
         </>
     )
 }

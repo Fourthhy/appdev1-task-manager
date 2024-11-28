@@ -22,11 +22,6 @@ function App() {
 
             <div class="grid grid-cols-[repeat(3,25vw)] grid-rows-auto">
               <TaskBox />
-              <TaskBox />
-              <TaskBox />
-              <TaskBox />
-              <TaskBox />
-              <TaskBox />
             </div>
           </div>
         </div>

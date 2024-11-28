@@ -2,9 +2,11 @@ import { RiDeleteBackLine } from "react-icons/ri";
 //bg-gradient-to-br from-[#FFD1FF] to-[#FBD0C8] - Red / Pending
 //bg-gradient-to-br from-[#97F7F5] to-[#FBF7B8] - Green / Completed
 function TaskBox() {
+    const container = document.getElementById('taskBox')
+    
     return (
         <>
-            <div class="h-[230px] flex justify-center items-center text-[#212121ec] popup-container popup-container active">
+            <div class="h-[230px] flex justify-center items-center text-[#212121ec] popup-container popup-container active" id="taskBox">
 
                 <div class=" w-[280px] rounded-[10px] group bg-[#ffffff80]"> {/* For Border */}
 
@@ -14,12 +16,12 @@ function TaskBox() {
                             <div class="bg-gradient-to-br from-[#97F7F5] to-[#FBF7B8] border-black px-[30px] rounded-[10px]"> Title </div>
                         </div>
 
-                        <div class="flex justify-end items-center mr-[10px] hidden group-hover:flex transition-opacity duration-300">
-                            <RiDeleteBackLine class="w-6 h-6"/>
+                        <div class="flex justify-end items-center mr-[10px] hidden group-hover:flex transition-opacity duration-300" onClick={() => {container.classList.remove('active')}}>
+                            <RiDeleteBackLine class="w-6 h-6" />
                         </div>
 
-                        <div class=" col-span-2 row-span-2 w-[260px] ml-[9px] w-[260px] font-[Finlandica]"> 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore, magnam iure quas libero dolorum voluptate maiores modi maxime corrupti. 
+                        <div class=" col-span-2 row-span-2 w-[260px] ml-[9px] w-[260px] font-[Finlandica]">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore, magnam iure quas libero dolorum voluptate maiores modi maxime corrupti.
                         </div>
 
                         <div class="flex justify-start items-center ml-[15px] pb-[12px]">
