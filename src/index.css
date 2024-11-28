@@ -20,4 +20,15 @@
       border-radius: 2px;
       color: gray
     }
+    
+    .popup-container {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    .popup-container.active {
+      opacity: 1;
+      transform: scale(1);
+    }
   }

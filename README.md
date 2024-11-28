@@ -35,3 +35,7 @@ This will create 2 Files: <i>postcss.config.js</i> and <i>tailwind.config.js</i>
 <li> Separate the "Completed" and "Pending" Sections of tasks (if possible, create a separate component and use state management to switch betwen components)</li>
 <li> find animations for appearing of new tasks and deletion of old tasks </li>
 <li> finish the templates to proceed to backend </li>
+
+11/28 <br><hr>
+<li> Created a component for adding tasks </li>
+<li> added animation for easing in and out </li>

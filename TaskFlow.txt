@@ -87,7 +87,9 @@ Create individual components
  - For input of tasks
 Find an animation for the input of tasks - New Tasks
 Find an animation for the input of tasks - Deleted Tasks
+
 Switching texts buttons animation
+
 Read about input validation
 
 **PROCESS** - part 2 = back end
