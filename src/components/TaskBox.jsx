@@ -4,7 +4,7 @@ import { RiDeleteBackLine } from "react-icons/ri";
 function TaskBox() {
     return (
         <>
-            <div class="h-[230px] flex justify-center items-center">
+            <div class="h-[230px] flex justify-center items-center text-[#212121ec]">
 
                 <div class=" w-[280px] rounded-[10px] group bg-[#ffffff80]"> {/* For Border */}
 
@@ -22,7 +22,7 @@ function TaskBox() {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore, magnam iure quas libero dolorum voluptate maiores modi maxime corrupti. 
                         </div>
 
-                        <div class="flex justify-start items-center ml-[15px]">
+                        <div class="flex justify-start items-center ml-[15px] pb-[12px]">
                             <div> Status </div>
                         </div>
                     </div>
