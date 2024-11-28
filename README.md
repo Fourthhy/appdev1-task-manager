@@ -39,3 +39,7 @@ This will create 2 Files: <i>postcss.config.js</i> and <i>tailwind.config.js</i>
 11/28 <br><hr>
 <li> Created a component for adding tasks </li>
 <li> added animation for easing in and out </li>
+
+11/29 <br><hr>
+<li> installed firebase in project </li>
+*npm install firebase*
