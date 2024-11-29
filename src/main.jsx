@@ -5,7 +5,5 @@ import App from './App.jsx'
 import DarkMode from './components/DarkMode.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+    <App />,
 )
