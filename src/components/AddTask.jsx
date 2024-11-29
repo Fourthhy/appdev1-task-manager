@@ -1,4 +1,21 @@
+import { useState } from "react";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
+
 function AddTask() {
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+
+    const handleNewTask = async () => {
+        const collectionRef = collection(db, 'tasks');
+        const docRef = await addDoc(collectionRef, {
+            title: title,
+            body: body,
+            status: 'pending'
+        })
+        console.log(docRef)
+    }
+
     return (
         <>
             <div className="h-[230px] flex justify-center items-center flex-col text-[#212121ec]">
@@ -10,16 +27,19 @@ function AddTask() {
                     <form>
                         <div className="grid grid-cols-auto h-[300px] grid-rows-[40px_150px_30px] gap-[10px] pt-[30px] px-[5px]">
 
-                            <input type="text" name="title" id="title" placeholder="Title" required
+                            <input type="text" name="title" id="title" placeholder="Title" required value={setTitle} 
+                            onChange={(e) => setTitle(e.target.value)}
                             className="border-[1px] rounded-[5px] border-[#808080] bg-[#ffffff00] outline-none pl-[5px]" />
 
-                            <textarea name="desc" id="desc" required placeholder="Description" 
+                            <textarea name="desc" id="desc" required placeholder="Description" value={setBody}
+                            onChange={(e) => setBody(e.target.value)}
                             className="border-[1px] rounded-[5px] border-[#808080] bg-[#ffffff00] outline-none pl-[5px] resize-none"></textarea>
                             
                             <div className="flex justify-end">
                                 <button type="submit" 
-                                className="border-[#808080] rounded-[5px] border-[1px] w-[100px] flex justify-center items-center text-[15px]"
-                                >Add Task</button>
+                                className="border-[#808080] rounded-[5px] border-[1px] w-[100px] flex justify-center items-center text-[15px]" onClick={handleNewTask}>
+                                    Add Task
+                                </button>
                             </div>
                         </div>
                     </form>
