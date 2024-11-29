@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { RiDeleteBackLine } from "react-icons/ri";
 import { db } from "../firebase";
-import { collection, doc, getDocs, deleteDoc } from "firebase/firestore";
+import { collection, doc, getDocs, deleteDoc, updateDoc, getDoc } from "firebase/firestore";
 
 function TaskLists() {
     const [tasks, setTasks] = useState([]);
@@ -39,10 +39,36 @@ function TaskLists() {
     };
 
     // Handle changing task status
-    const handleStatus = (id) => {
-        setTasks((prevTasks) => prevTasks.map((task) =>
-            task.id === id ? { ...task, status: !task.status } : task
-        ));
+    
+    const handleStatus = async (id) => {
+        try {
+            const taskRef = doc(db, 'tasks', id);
+            
+            // Retrieve the current task document
+            const currentTask = await getDoc(taskRef);
+    
+            // Get the current status from the document
+            const currentStatus = currentTask.data().status;
+    
+            // Determine the new status
+            const newStatus = currentStatus === 'pending' ? 'completed' : 'pending';
+    
+            // Update the status in Firestore
+            await updateDoc(taskRef, {
+                status: newStatus,
+            });
+    
+            // Update local state to reflect the new status
+            setTasks((prevTasks) =>
+                prevTasks.map((task) =>
+                    task.id === id ? { ...task, status: newStatus } : task
+                )
+            );
+    
+        } catch (error) {
+            console.error("Error updating task status: ", error);
+            alert("Failed to update task status. Please try again.");
+        }
     };
 
     return (
@@ -53,7 +79,7 @@ function TaskLists() {
                         <div className="grid grid-cols-[repeat(2,50%)] grid-rows-[40px_100px_30px]">
                             <div className="flex justify-start ml-[10px] items-center">
                                 <div className={`px-[30px] rounded-[10px] transition text-[15px] 
-                                    ${task.status ? 'bg-gradient-to-br from-[#97F7F5] to-[#FBF7B8]' : 'bg-gradient-to-br from-[#FFD1FF] to-[#FBD0C8]'}`}>
+                                    ${task.status === 'pending' ? 'bg-gradient-to-br from-[#FFD1FF] to-[#FBD0C8]' : 'bg-gradient-to-br from-[#97F7F5] to-[#FBF7B8]'}`}>
                                     {task.title}
                                 </div>
                             </div>
@@ -63,10 +89,10 @@ function TaskLists() {
                             <div className=" col-span-2 row-span-2 w-[260px] ml-[9px] font-[Finlandica] p-[8px]">
                                 {task.body}
                             </div>
-                            <div className=" flex justify-start items-center ml-[15px] pb-[12px] cursor-pointer">
-                                <div onClick={() => handleStatus(task.id)}>
-                                    {task.status ? 'Completed' : 'Pending'}
-                                </div>
+                            <div className=" flex justify-start items-center ml-[15px] pb-[12px] ">
+                                <button className="cursor-pointer" onClick={() => handleStatus(task.id)}>
+                                    {task.status === 'completed' ? 'Completed' : 'Pending'}
+                                </button>
                             </div>
                         </div>
                     </div>
