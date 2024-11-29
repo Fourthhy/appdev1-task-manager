@@ -1,4 +1,4 @@
-# React + Vite + Tailwind
+# React + Vite + Tailwind + Firebase
 
 ## Task Manager
 
