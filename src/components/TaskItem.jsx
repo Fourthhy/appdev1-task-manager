@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function TaskItem({title, desc, status}) {
-    const [pStatus, setPStatus] = useState('pending')
+
     return (
         <>
             <div className=" h-[25vh] w-[23vw] rounded-[10px] m-[10px] font-Raleway bg-[#ffffff40]">
@@ -18,7 +18,10 @@ function TaskItem({title, desc, status}) {
                         { desc }
                     </div>
                     <div className=" flex justify-start items-center pl-[15px] text-[15px]">
-                        { status }
+                        <button
+                            className="border-[#000000bd] border-[1px] rounded-[10px] py-[2px] px-[5px]">
+                                { status }
+                        </button>
                     </div>
                 </div>
             </div>

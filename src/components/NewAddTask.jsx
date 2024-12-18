@@ -30,10 +30,10 @@ function NewAddTask() {
 
     return (
         <>
-            <div className={invi == true ? '' : 'absolute bg-[#000000dd] h-screen w-screen rounded-[10px]'}>
+            <div className={invi == true ? '' : 'transition-opacity duration-100 ease-in opacity-100 bg-[#000000dd] h-screen w-screen rounded-[10px]'}>
                 <div className={invi == true ? 
-                    'transition-opacity ease-out duration-100 opacity-100' : 
-                    'transition-opacity ease-in duration-100 opacity-0'}>
+                    'transition-opacity duration-200 opacity-100' : 
+                    'transition-opacity duration-200 opacity-0'}>
                     <button 
                         className="border-[1.5px] border-[#ffffff99] py-[5px] px-[10px] rounded-[10px] font-Raleway text-[#ffffff99] m-[20px] bg-[#ffffff20]" 
                         onClick={handleInvi}> 
@@ -45,17 +45,17 @@ function NewAddTask() {
                 <div className={invi == true ? 
                     'transition-opacity ease-out duration-100 opacity-0' : 
                     'transition-opacity ease-in duration-100 opacity-100'}>
-                    <div className="border-[#ffffff50] border-[1px] rounded-[10px] bg-[#ffffff20] w-[250px] h-auto p-[10px] absolute top-[50px] left-[39vw]">
+                    <div className="border-[#ffffff50] border-[1px] rounded-[10px] bg-[#ffffff20] w-[270px] h-auto p-[10px] absolute top-[50px] left-[39vw]">
                         <form>
                             <div className="flex flex-col justify-center items-center gap-[10px]">
                                 <div>
-                                    <h4 className="font-Raleway text-[#ffffffc4]">
+                                    <h4 className="font-Raleway text-[#ffffffc4] text-[16px]">
                                         {validTitle ? 'Input title' : <p className="text-[#ff0000aa]">Title is required</p>}
                                     </h4>
                                     <input 
                                         type="text" 
                                         placeholder="title" 
-                                        className={`rounded-[5px] font-Raleway text-[15px] py-[5px] px-[10px] bg-[#ffffff40]
+                                        className={`w-[240px] rounded-[5px] font-Raleway text-[15px] py-[5px] px-[10px] bg-[#ffffff40]
                                             ${validTitle ? 'border-[#ffffff40] border-[px]' : 'border-red-500 border-[2px]'}
                                         `} 
                                         onChange={(e) => {setTitle(e.target.value)}}
@@ -63,12 +63,12 @@ function NewAddTask() {
                                 </div>
                                 <div>
                                     <h4 
-                                        className="font-Raleway text-[#ffffffc4]">
+                                        className="font-Raleway text-[#ffffffc4] text-[16px]">
                                             {validBody ? 'Input desc' : <p className="text-[#ff0000aa]">Desc is required</p>}
                                         </h4>
                                         <textarea 
                                             placeholder="description" 
-                                            className={`rounded-[5px] font-Raleway text-[15px] py-[5px] px-[10px] bg-[#ffffff40]
+                                            className={`w-[240px] rounded-[5px] font-Raleway text-[15px] py-[5px] px-[10px] bg-[#ffffff40]
                                             ${validBody ? 'border-[#ffffff40] border-[px]' : 'border-red-500 border-[2px]'}
                                         `}
                                             onChange={(e) => {setBody(e.target.value)}}
@@ -93,7 +93,6 @@ function NewAddTask() {
                                 </div>
                             </div>
                         </form>
-                        
                     </div>
                 </div>
             </div>
