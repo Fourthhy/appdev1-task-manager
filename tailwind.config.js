@@ -7,7 +7,12 @@ export default {
     './components/**/*.{html,js}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Raleway: ['Raleway', 'sans-serif'],
+        Finlandica: ['Finlandica', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }
