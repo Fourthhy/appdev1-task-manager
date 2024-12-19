@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { db } from "../firebase";
+import { collection, doc, getDocs, deleteDoc, addDoc, updateDoc, getDoc } from "firebase/firestore";
 
 function NewAddTask() {
     const [invi, setInvi] = useState(true);
@@ -10,6 +12,17 @@ function NewAddTask() {
     const handleInvi = (e) => {
         e.preventDefault();
         setInvi(!invi)
+    }
+
+    const addTask = async () => {
+        const collectionRef = collection(db, 'tasks');
+        await addDoc(collectionRef, {
+            title: title,
+            desc: body,
+            status: 'pending'
+        })
+        setTitle('')
+        setBody('')
     }
 
     const inputValidation = (e) => {
@@ -24,7 +37,8 @@ function NewAddTask() {
             isValid = false;
         }
         if (isValid) {
-            alert('fields are valid')
+            addTask()
+            setInvi(!invi)
         }
     }
 
@@ -40,16 +54,15 @@ function NewAddTask() {
                         Add Task 
                     </button>    
                 </div>
-                
 
                 <div className={invi == true ? 
                     'transition-opacity ease-out duration-100 opacity-0' : 
                     'transition-opacity ease-in duration-100 opacity-100'}>
-                    <div className="border-[#ffffff50] border-[1px] rounded-[10px] bg-[#ffffff20] w-[270px] h-auto p-[10px] absolute top-[50px] left-[39vw]">
+                    <div className="border-[#ffffff50] border-[1px] rounded-[10px] bg-[#ffffff20] w-[270px] h-auto p-[10px] absolute top-[50px] left-[38vw]">
                         <form>
                             <div className="flex flex-col justify-center items-center gap-[10px]">
                                 <div>
-                                    <h4 className="font-Raleway text-[#ffffffc4] text-[16px]">
+                                     <h4 className="font-Raleway text-[#ffffffc4] text-[16px]">
                                         {validTitle ? 'Input title' : <p className="text-[#ff0000aa]">Title is required</p>}
                                     </h4>
                                     <input 
