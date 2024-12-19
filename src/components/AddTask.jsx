@@ -2,7 +2,7 @@ import { useState } from "react";
 import { db } from "../firebase";
 import { collection, doc, getDocs, deleteDoc, addDoc, updateDoc, getDoc } from "firebase/firestore";
 
-function NewAddTask() {
+function AddTask({onTaskAdd}) {
     const [invi, setInvi] = useState(true);
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
@@ -23,6 +23,7 @@ function NewAddTask() {
         })
         setTitle('')
         setBody('')
+        onTaskAdd();
     }
 
     const inputValidation = (e) => {
@@ -113,4 +114,4 @@ function NewAddTask() {
     )
 }
 
-export default NewAddTask;
+export default AddTask;
