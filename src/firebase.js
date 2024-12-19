@@ -11,10 +11,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
+const db = getFirestore(app)
+const auth = getAuth(app)
+const googleProvider = new GoogleAuthProvider()
 
-export { db, auth, googleProvider }
+export { db, auth, googleProvider } 

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { auth } from "../firebase"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 
 function SignUp() {
@@ -8,6 +8,19 @@ function SignUp() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [prompt, setPrompt] = useState('Sign Up')
+    const navigate = useNavigate()
+
+    const handleCreateUser = async (e) => {
+        e.preventDefault();
+        try {
+            await createUserWithEmailAndPassword(auth, email, password)
+            setPrompt('Signed up')
+            setPrompt('Logging you in')
+            setTimeout(() => {navigate('/tasklist')}, 1000)
+        } catch (error) {
+            setError(error.message)
+        }
+    }
 
     return (
         <>
@@ -16,7 +29,7 @@ function SignUp() {
                     <div className="flex justify-center items-center pt-[10px]">
                         <p className={`font-bold ${prompt === 'Sign Up' ? '' : 'text-[rgba(40,230,40,0.8)]'}`}> { prompt } </p>
                     </div>
-                    <form>
+                    <form onSubmit={handleCreateUser}>
                         <div className="m-[20px]">
                             <div className="flex justify-center items-center flex-col mt-[20px]">
                                 <p className="font-bold flex justify-start w-[290px] mb-[10px]"> Email </p>
@@ -40,7 +53,11 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="flex justify-center gap-[10px] flex-col items-center">
-                            <button type="submit" className="border-[1.5px] border-[#ffffff99] py-[5px] px-[10px] rounded-[10px] font-Raleway text-[#ffffff99] bg-[#ffffff20] w-[100px]">Sign Up</button>
+                            <button 
+                                type="submit" 
+                                className="border-[1.5px] border-[#ffffff99] py-[5px] px-[10px] rounded-[10px] font-Raleway text-[#ffffff99] bg-[#ffffff20] w-[100px]">
+                                    Sign Up
+                            </button>
                         </div>
                     </form>
                     <div className="flex justify-center items-center mt-[20px]">

@@ -17,7 +17,7 @@ function SignIn() {
         try {
             await signInWithEmailAndPassword(auth, email, password)
             setPrompt('Signed In')
-            navigate('/tasklist')
+            setTimeout(() => {navigate('/tasklist')}, 1000)
         } catch (error) {
             setError(error.message)
         }
@@ -28,7 +28,7 @@ function SignIn() {
         try {
             await signInWithPopup(auth, googleProvider)
             setPrompt('Signed In')
-            navigate('/tasklist')
+            setTimeout(() => {navigate('/tasklist')}, 1000)
         } catch (error) {
             setError(error.message)
         }
