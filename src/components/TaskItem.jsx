@@ -8,7 +8,7 @@ function TaskItem({title, desc, status}) {
                 <div className="grid grid-rows-[5vh_15vh_5vh]">
                     <div>
                         <p className={`${status === 'pending' ? 
-                    'flex justify-start pt-[5px] pl-[10px] font-bold text-[rgba(200,40,40,0.8)]' : 
+                    'flex justify-start pt-[5px] pl-[10px] font-bold text-[rgba(230,40,40,0.8)]' : 
                     'flex justify-start pt-[5px] pl-[10px] font-bold text-[rgba(40,230,40,0.8)]'}`}>
                         { title }
                     </p>

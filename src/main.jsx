@@ -7,6 +7,6 @@ import NewTaskList from './components/TaskList.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <NewTaskList />
+        <App />
     </StrictMode>
 )
