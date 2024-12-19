@@ -1,8 +1,10 @@
+import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import AddTask from "./AddTask";
 import SignOut from "./SignOut";
 import TaskItem from "./TaskItem";
 import { collection, doc, getDocs, deleteDoc, addDoc, updateDoc, getDoc } from "firebase/firestore";
+
 
 
 function NewTaskList() {
@@ -36,7 +38,11 @@ function NewTaskList() {
             </div>
 
             <div className="grid grid-cols-4">
-                <TaskItem title='sample title' desc='Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, qui.' status='pending' />
+                {
+                    tasks.map((task) => (
+                        <TaskItem title={task.title} desc={task.desc} status={task.status} taskID={task.id}/>
+                    ))
+                }
             </div>
         </>
     )
